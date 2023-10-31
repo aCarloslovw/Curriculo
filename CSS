@@ -1,0 +1,195 @@
+/* Reset de margens e preenchimentos */
+body, h1, h4, h5, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Definir uma fonte padrão e cor de fundo */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: black;
+    color: #00ff00; /* Cor da fonte verde */
+    margin: 0;
+    text-align: left;
+}
+
+/* Estilo para o contêiner principal */
+#folha {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #000;
+    padding: 20px;
+    border: 1px solid #00ff00; /* Borda verde */
+    border-radius: 5px;
+    position: relative;
+    z-index: 1; /* Elevar o currículo acima do fundo de chuva de código */
+}
+
+/* Estilo para informações pessoais */
+#nome {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#meuNome {
+    font-size: 32px;
+    margin: 0;
+}
+
+#minhaProfissao {
+    font-size: 20px;
+    margin: 0;
+    color: #00ff00;
+}
+
+/* Estilo para seções */
+.titulo {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #00ff00; /* Cor do título verde */
+}
+
+.subtitulo {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estilo para informações de contato e perfil */
+.info {
+    font-size: 18px;
+    list-style: none;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Estilo para a tabela de formação */
+table {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #00ff00;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, table th {
+    padding: 10px;
+    border: 1px solid #00ff00; /* Borda verde */
+    text-align: left;
+}
+
+/* Estilo para links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para a chuva de código */
+.rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; /* Colocar a chuva de código atrás do currículo */
+}
+
+.rain p {
+    color: #00ff00;
+    font-size: 20px;
+    margin: 0;
+    white-space: nowrap;
+    position: absolute;
+    opacity: 0.7;
+    transform: translateY(-100%);
+}
+
+@keyframes matrix-rain {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0.5;
+        filter: blur(10px);
+        text-shadow: none;
+    }
+
+    50% {
+        opacity: 1;
+        filter: blur(5px);
+        text-shadow: none;
+    }
+
+    75% {
+        opacity: 1;
+        filter: blur(2px);
+        text-shadow: none;
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 0.5;
+        filter: blur(1px);
+        text-shadow:
+            -1px -1px #00ff00,
+            -2px -2px #00ff00,
+            -3px -3px #00ff00,
+            -4px -4px #00ff00,
+            -5px -5px #00ff00,
+            -6px -6px #00ff00,
+            -7px -7px #00ff00,
+            -8px -8px #00ff00,
+            -9px -9px #00ff00,
+            -10px -10px #00ff00,
+            -11px -11px #00ff00,
+            -12px -12px #00ff00,
+            -13px -13px #00ff00,
+            -14px -14px #00ff00,
+            -15px -15px #00ff00,
+            -16px -16px #00ff00,
+            -17px -17px #00ff00,
+            -18px -18px #00ff00,
+            -19px -19px #00ff00,
+            -20px -20px #00ff00;
+    }
+}
+
+.rain p:nth-child(odd) {
+    animation-name: matrix-rain;
+    animation-duration: 0.5s;
+}
+
+.rain p:nth-child(even) {
+    animation-name: matrix-rain;
+    animation-duration: 0.5s;
+}
+#matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  /* Estilo para o botão de iniciar a chuva de código com a temática "Matrix" */
+#startRainButton {
+    background-color: #000;
+    color: #0F0;
+    border: 2px solid #0F0;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  }
+  
+  #startRainButton:hover {
+    background-color: #0F0;
+    color: #000;
+    border: 2px solid #000;
+  }
+  
