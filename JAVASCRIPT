@@ -1,0 +1,43 @@
+
+  // Função para iniciar a chuva de código
+  function startMatrixRain() {
+    const canvas = document.getElementById('matrix-rain');
+    canvas.style.display = 'block'; // Exibir o canvas
+    const context = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charArray = chars.split('');
+
+    let font_size = 10;
+    let columns = canvas.width / font_size;
+    let drops = [];
+
+    for (let x = 0; x < columns; x++) {
+      drops[x] = 1;
+    }
+
+    function draw() {
+      context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.fillStyle = '#0F0';
+      context.font = font_size + 'px arial';
+
+      for (let i = 0; i < drops.length; i++) {
+        let text = charArray[Math.floor(Math.random() * charArray.length)];
+        context.fillText(text, i * font_size, drops[i] * font_size);
+
+        if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    // Intervalo para iniciar a animação
+    const matrixInterval = setInterval(draw, 33);
+  }
+
